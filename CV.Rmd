@@ -1,0 +1,93 @@
+---
+name: Constantinos 
+surname: Eraclides
+address: "26, The Living Quarter, St Mary's Gate, Nottingham, Nottinghamshire, NG1 1PF"
+phone: +44 (0) 7907952098
+email: "constantinos.eraclides@gmail.com"
+github: constantinoseraclides
+linkedin: constantinoseraclides
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::hyndman
+header-includes:
+  - \usepackage{colortbl}
+  - \arrayrulecolor{white}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+```
+
+# 
+An enthusiastic individual recently finished from my postgraduate studies. In possession of robust quantitative, problem-solving, analytical and critical thinking skills, that aims to consolidate and expand upon, through real world challenges. 
+
+# Education
+
+```{r ed}
+tribble(~when, ~what, ~with, ~where, ~why,
+        "2020-2021", "M.Sc. Applied Statistics and Datamining (Merit)", "Fife, Scotland", "University of St Andrews", 
+        list("Dissertation topic: Bayesian model/variable Selection, within the Bayesian framework.", "Worked on imbalanced classification with a real high-dimensional dataset where it was sparse on its true effects."),
+        "2017-2020", "B.Sc. Mathematics (2:1)", "Nottingham, England", "University of Nottingham",  
+        list("Final Year Modules: Scientific Computations and Numerical Analysis, Optimization, Stochastic Modelling, Statistical Inference, Applied Statistical Modelling, Multivariate Analysis"),
+        "2009-2016", "Secondary School (Apolytirion, 88.89%)", "Nicosia, Cyprus", "The GC School of Careers", 
+        list("A-levels: Mathematics (A*), Further Mathematics (A), Greek (B)")
+        ) %>%
+  detailed_entries(when = when, what = what, where = where, with = with, why = why)
+```
+
+
+# Professional Expirience
+
+```{r exp}
+tribble(
+  ~when, ~what, ~with, ~where, ~why,
+  "07/2019", "Internship", "Nicosia, Cyprus" , "Cronje & Yiannas Acctuaries and Consultants LTD",
+  list("Learned how a professional actuarial environment operates.",
+       "Worked in teams to complete various tasks approinted by our supervisor.",
+       "Enhanced my attention to detail, teamwork and professional accountability skills"),
+  "07/2016-09/2017", "Special Forces", "Nicosia, Cyprus", "Cyprus National Guard",
+  list("Completing my mandatory army service that necessitated working with a group towards a common goal, which required camaraderie with my fellow soldiers.",
+       "Went through exhaustive training, which pushed my tolerance boundaries beyond what I thought where my limits."),
+  "12/2015-01/2016", "Shop Assistant and Deliveries", "Limasol, Cyprus", "SPECTUS Wines & Spirits Merchants",
+  list("I was in charge for the preparation of large orders and their delivery during Christmas season where there is an increase in demand for wine and spirits.",
+       "Earned customer service skills and punctuality."),
+  "06/2013-09/2013", "Logistics Department", "Nicosia, Cyprus", "Hellenic Distribution Agency LTD", 
+  list("Preparation of delivery notes to customers based on available sales data while optimizing delivery routes of van drivers.")
+) %>%
+  detailed_entries(when = when, what = what, where = where, with = with, why = why)
+```
+
+# Additional Skills
+  * Languages: Greek(Native Language), English(Proficient)
+  * Programming Skills: R/Python/MATLAB
+  * Computer Skills: ECDL qualification (Skillfull in Excel & Word)
+  * Teaching Skills: During my final year at the GC School of Careers I tutored on a weekly basis a fellow student with his A-level Mathematics
+  
+# References
+
+```{r ref}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+table.tbl <- tibble("Dr Michail Papathomas" = c(
+                         "Centre for Research into Ecological & Environmental Modelling",
+                         "University of St Andrews",
+                         "Email: m.papathomas@st-andrews.ac.uk",
+                         "T: +44 (0)1334 461818"),
+                    
+                    "Dr Martin Edjvet" = c(
+                             "Department of Mathematical Sciences ",
+                             "University of Nottingham",
+                             "Email: martin.edjvet@nottingham.ac.uk",
+                             "T: +44 (0) 1159514932"))
+table.tbl %>% 
+  kable(format = "latex") %>%
+  row_spec((table.tbl %>%
+             nrow()), extra_latex_after = "\\arrayrulecolor{white}")
+
+```
+
+
+  
